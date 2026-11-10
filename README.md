@@ -5,8 +5,8 @@ un e-puck que debe explorar un laberinto desconocido, llegar al centro y luego
 recorrerlo lo más rápido posible, igual que en la competencia **Micromouse
 clásica del IEEE**.
 
-Los laberintos ya vienen hechos: el repositorio incluye uno de **8 × 8** y uno
-de **16 × 16** para desarrollar y probar. **Lo único que entrega cada equipo es
+Los laberintos ya vienen hechos: el repositorio incluye **10 de 8 × 8** y
+**10 de 16 × 16** para desarrollar y probar. **Lo único que entrega cada equipo es
 el controlador del robot.** Al final, el profesor carga cada controlador en un
 laberinto **sorpresa de 16 × 16** y los equipos compiten uno contra uno.
 
@@ -25,7 +25,7 @@ laberinto **sorpresa de 16 × 16** y los equipos compiten uno contra uno.
 
 ## Inicio rápido
 
-1. Abran `worlds/ejemplo_8x8.wbt` en Webots y ejecuten la simulación. El e-puck
+1. Abran `worlds/practica_8x8_01.wbt` en Webots y ejecuten la simulación. El e-puck
    sigue la pared derecha celda por celda y el árbitro muestra el marcador en
    pantalla. El seguidor de pared **nunca llega a la meta**: para eso necesitan
    su propio algoritmo.
@@ -35,10 +35,11 @@ laberinto **sorpresa de 16 × 16** y los equipos compiten uno contra uno.
 3. Para que el robot use su controlador: en el árbol de la escena de Webots,
    seleccionen `DEF MOUSE E-puck`, luego el campo `controller`, y elijan su
    carpeta. Guarden el mundo. **Es el único cambio permitido a los mundos.**
-4. Desarrollen primero en el 8 × 8 y después verifiquen en el 16 × 16.
+4. Desarrollen primero en los 8 × 8 y después verifiquen en los 16 × 16.
+   Prueben en **todos**: cada laberinto tiene una ruta y unos ciclos distintos.
 
 > Su robot debe funcionar en **cualquier** laberinto que cumpla el estándar,
-> no solo en los dos de ejemplo. La competencia es en un laberinto que nadie
+> no solo en los de práctica. La competencia es en un laberinto que nadie
 > conoce.
 
 ---
@@ -47,7 +48,8 @@ laberinto **sorpresa de 16 × 16** y los equipos compiten uno contra uno.
 
 | Ruta | Contenido |
 |---|---|
-| `worlds/ejemplo_8x8.wbt`, `ejemplo_16x16.wbt` | Mundos listos para usar |
+| `worlds/practica_8x8_01.wbt` … `practica_8x8_10.wbt` | 10 laberintos de práctica de 8 × 8 |
+| `worlds/practica_16x16_01.wbt` … `practica_16x16_10.wbt` | 10 laberintos de práctica de 16 × 16 (tamaño de competencia) |
 | `controllers/epuck_plantilla/` | Plantilla con todos los dispositivos del e-puck inicializados y un seguidor de pared de ejemplo |
 | `controllers/referee/` | Árbitro automático (Supervisor). **No modificar** |
 | `protos/` | Pared y poste con dimensiones IEEE |
@@ -142,7 +144,15 @@ computadora.
 
    donde `t_salida` es el instante (contado desde `t = 0`) en que inició esa
    corrida. Explorar rápido también cuenta. El puntaje del robot es el **menor
-   P** de sus corridas completas.
+   P** de sus corridas completas. Una corrida completa nunca pasa de 600.
+   Si el robot **no completa ninguna corrida**, su puntaje es
+
+   **P = 600 + 30·d + t_d / 30**
+
+   donde `d` es la distancia a la meta, en celdas por los pasillos, de la celda
+   más cercana a la meta que visitó, y `t_d` el instante en que llegó a ella.
+   Así, llegar a la meta siempre es mejor que no llegar, y entre los que no
+   llegan gana el que quedó más cerca.
 5. El concurso de cada robot termina con lo que ocurra primero:
    - **10 minutos** de simulación;
    - el robot no cambia de celda en **60 s** (se considera atorado);
@@ -154,9 +164,10 @@ computadora.
 - Equipos de **máximo 3 integrantes**.
 - Clasificación en un laberinto sorpresa de 16 × 16.
 - Después, eliminatoria uno contra uno por posiciones (1.° contra último, …),
-  con un laberinto sorpresa distinto en cada ronda.
-- Desempate: mayor número de celdas distintas visitadas (lo registra el
-  árbitro).
+  Cada llave tiene su propio laberinto sorpresa, distinto de todos los demás;
+  los dos robots de la llave corren en él, primero el mejor clasificado.
+- Gana el menor puntaje. En un empate exacto: mayor número de celdas distintas
+  visitadas (lo registra el árbitro) y luego la mejor posición en la clasificación.
 
 ---
 

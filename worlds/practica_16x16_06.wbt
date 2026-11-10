@@ -1,0 +1,639 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puckGroundSensors.proto"
+EXTERNPROTO "../protos/MazeWall.proto"
+EXTERNPROTO "../protos/MazePost.proto"
+
+WorldInfo {
+  info [
+    "Proyecto final Micromouse con e-puck"
+    "Laberinto: practica_16x16_06 (16 x 16)"
+    "Mundo oficial del proyecto -- no editar (salvo el campo controller del e-puck)"
+  ]
+  title "Micromouse - practica_16x16_06"
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.5773 0.5773 0.5773 2.0944
+  position 1.4400 1.4400 4.1880
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Solid {
+  translation 1.4400 1.4400 -0.005
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.05 0.05 0.05
+        roughness 1
+        metalness 0
+      }
+      geometry DEF PISO Box {
+        size 3.0800 3.0800 0.01
+      }
+    }
+  ]
+  name "piso"
+  boundingObject USE PISO
+  locked TRUE
+}
+Solid {
+  translation 1.4400 1.4400 -0.0049
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.85 0
+        roughness 0
+        metalness 0
+      }
+      geometry DEF META Box {
+        size 0.3480 0.3480 0.01
+      }
+    }
+  ]
+  name "meta"
+  boundingObject USE META
+  locked TRUE
+}
+DEF LABERINTO Group {
+  children [
+    MazePost { translation 0.0000 0.0000 0 name "poste_0_0" }
+    MazePost { translation 0.0000 0.1800 0 name "poste_0_1" }
+    MazePost { translation 0.0000 0.3600 0 name "poste_0_2" }
+    MazePost { translation 0.0000 0.5400 0 name "poste_0_3" }
+    MazePost { translation 0.0000 0.7200 0 name "poste_0_4" }
+    MazePost { translation 0.0000 0.9000 0 name "poste_0_5" }
+    MazePost { translation 0.0000 1.0800 0 name "poste_0_6" }
+    MazePost { translation 0.0000 1.2600 0 name "poste_0_7" }
+    MazePost { translation 0.0000 1.4400 0 name "poste_0_8" }
+    MazePost { translation 0.0000 1.6200 0 name "poste_0_9" }
+    MazePost { translation 0.0000 1.8000 0 name "poste_0_10" }
+    MazePost { translation 0.0000 1.9800 0 name "poste_0_11" }
+    MazePost { translation 0.0000 2.1600 0 name "poste_0_12" }
+    MazePost { translation 0.0000 2.3400 0 name "poste_0_13" }
+    MazePost { translation 0.0000 2.5200 0 name "poste_0_14" }
+    MazePost { translation 0.0000 2.7000 0 name "poste_0_15" }
+    MazePost { translation 0.0000 2.8800 0 name "poste_0_16" }
+    MazePost { translation 0.1800 0.0000 0 name "poste_1_0" }
+    MazePost { translation 0.1800 0.1800 0 name "poste_1_1" }
+    MazePost { translation 0.1800 0.3600 0 name "poste_1_2" }
+    MazePost { translation 0.1800 0.5400 0 name "poste_1_3" }
+    MazePost { translation 0.1800 0.7200 0 name "poste_1_4" }
+    MazePost { translation 0.1800 0.9000 0 name "poste_1_5" }
+    MazePost { translation 0.1800 1.0800 0 name "poste_1_6" }
+    MazePost { translation 0.1800 1.2600 0 name "poste_1_7" }
+    MazePost { translation 0.1800 1.4400 0 name "poste_1_8" }
+    MazePost { translation 0.1800 1.6200 0 name "poste_1_9" }
+    MazePost { translation 0.1800 1.8000 0 name "poste_1_10" }
+    MazePost { translation 0.1800 1.9800 0 name "poste_1_11" }
+    MazePost { translation 0.1800 2.1600 0 name "poste_1_12" }
+    MazePost { translation 0.1800 2.3400 0 name "poste_1_13" }
+    MazePost { translation 0.1800 2.5200 0 name "poste_1_14" }
+    MazePost { translation 0.1800 2.7000 0 name "poste_1_15" }
+    MazePost { translation 0.1800 2.8800 0 name "poste_1_16" }
+    MazePost { translation 0.3600 0.0000 0 name "poste_2_0" }
+    MazePost { translation 0.3600 0.1800 0 name "poste_2_1" }
+    MazePost { translation 0.3600 0.3600 0 name "poste_2_2" }
+    MazePost { translation 0.3600 0.5400 0 name "poste_2_3" }
+    MazePost { translation 0.3600 0.7200 0 name "poste_2_4" }
+    MazePost { translation 0.3600 0.9000 0 name "poste_2_5" }
+    MazePost { translation 0.3600 1.0800 0 name "poste_2_6" }
+    MazePost { translation 0.3600 1.2600 0 name "poste_2_7" }
+    MazePost { translation 0.3600 1.4400 0 name "poste_2_8" }
+    MazePost { translation 0.3600 1.6200 0 name "poste_2_9" }
+    MazePost { translation 0.3600 1.8000 0 name "poste_2_10" }
+    MazePost { translation 0.3600 1.9800 0 name "poste_2_11" }
+    MazePost { translation 0.3600 2.1600 0 name "poste_2_12" }
+    MazePost { translation 0.3600 2.3400 0 name "poste_2_13" }
+    MazePost { translation 0.3600 2.5200 0 name "poste_2_14" }
+    MazePost { translation 0.3600 2.7000 0 name "poste_2_15" }
+    MazePost { translation 0.3600 2.8800 0 name "poste_2_16" }
+    MazePost { translation 0.5400 0.0000 0 name "poste_3_0" }
+    MazePost { translation 0.5400 0.1800 0 name "poste_3_1" }
+    MazePost { translation 0.5400 0.3600 0 name "poste_3_2" }
+    MazePost { translation 0.5400 0.5400 0 name "poste_3_3" }
+    MazePost { translation 0.5400 0.7200 0 name "poste_3_4" }
+    MazePost { translation 0.5400 0.9000 0 name "poste_3_5" }
+    MazePost { translation 0.5400 1.0800 0 name "poste_3_6" }
+    MazePost { translation 0.5400 1.2600 0 name "poste_3_7" }
+    MazePost { translation 0.5400 1.4400 0 name "poste_3_8" }
+    MazePost { translation 0.5400 1.6200 0 name "poste_3_9" }
+    MazePost { translation 0.5400 1.8000 0 name "poste_3_10" }
+    MazePost { translation 0.5400 1.9800 0 name "poste_3_11" }
+    MazePost { translation 0.5400 2.1600 0 name "poste_3_12" }
+    MazePost { translation 0.5400 2.3400 0 name "poste_3_13" }
+    MazePost { translation 0.5400 2.5200 0 name "poste_3_14" }
+    MazePost { translation 0.5400 2.7000 0 name "poste_3_15" }
+    MazePost { translation 0.5400 2.8800 0 name "poste_3_16" }
+    MazePost { translation 0.7200 0.0000 0 name "poste_4_0" }
+    MazePost { translation 0.7200 0.1800 0 name "poste_4_1" }
+    MazePost { translation 0.7200 0.3600 0 name "poste_4_2" }
+    MazePost { translation 0.7200 0.5400 0 name "poste_4_3" }
+    MazePost { translation 0.7200 0.7200 0 name "poste_4_4" }
+    MazePost { translation 0.7200 0.9000 0 name "poste_4_5" }
+    MazePost { translation 0.7200 1.0800 0 name "poste_4_6" }
+    MazePost { translation 0.7200 1.2600 0 name "poste_4_7" }
+    MazePost { translation 0.7200 1.4400 0 name "poste_4_8" }
+    MazePost { translation 0.7200 1.6200 0 name "poste_4_9" }
+    MazePost { translation 0.7200 1.8000 0 name "poste_4_10" }
+    MazePost { translation 0.7200 1.9800 0 name "poste_4_11" }
+    MazePost { translation 0.7200 2.1600 0 name "poste_4_12" }
+    MazePost { translation 0.7200 2.3400 0 name "poste_4_13" }
+    MazePost { translation 0.7200 2.5200 0 name "poste_4_14" }
+    MazePost { translation 0.7200 2.7000 0 name "poste_4_15" }
+    MazePost { translation 0.7200 2.8800 0 name "poste_4_16" }
+    MazePost { translation 0.9000 0.0000 0 name "poste_5_0" }
+    MazePost { translation 0.9000 0.1800 0 name "poste_5_1" }
+    MazePost { translation 0.9000 0.3600 0 name "poste_5_2" }
+    MazePost { translation 0.9000 0.5400 0 name "poste_5_3" }
+    MazePost { translation 0.9000 0.7200 0 name "poste_5_4" }
+    MazePost { translation 0.9000 0.9000 0 name "poste_5_5" }
+    MazePost { translation 0.9000 1.0800 0 name "poste_5_6" }
+    MazePost { translation 0.9000 1.2600 0 name "poste_5_7" }
+    MazePost { translation 0.9000 1.4400 0 name "poste_5_8" }
+    MazePost { translation 0.9000 1.6200 0 name "poste_5_9" }
+    MazePost { translation 0.9000 1.8000 0 name "poste_5_10" }
+    MazePost { translation 0.9000 1.9800 0 name "poste_5_11" }
+    MazePost { translation 0.9000 2.1600 0 name "poste_5_12" }
+    MazePost { translation 0.9000 2.3400 0 name "poste_5_13" }
+    MazePost { translation 0.9000 2.5200 0 name "poste_5_14" }
+    MazePost { translation 0.9000 2.7000 0 name "poste_5_15" }
+    MazePost { translation 0.9000 2.8800 0 name "poste_5_16" }
+    MazePost { translation 1.0800 0.0000 0 name "poste_6_0" }
+    MazePost { translation 1.0800 0.1800 0 name "poste_6_1" }
+    MazePost { translation 1.0800 0.3600 0 name "poste_6_2" }
+    MazePost { translation 1.0800 0.5400 0 name "poste_6_3" }
+    MazePost { translation 1.0800 0.7200 0 name "poste_6_4" }
+    MazePost { translation 1.0800 0.9000 0 name "poste_6_5" }
+    MazePost { translation 1.0800 1.0800 0 name "poste_6_6" }
+    MazePost { translation 1.0800 1.2600 0 name "poste_6_7" }
+    MazePost { translation 1.0800 1.4400 0 name "poste_6_8" }
+    MazePost { translation 1.0800 1.6200 0 name "poste_6_9" }
+    MazePost { translation 1.0800 1.8000 0 name "poste_6_10" }
+    MazePost { translation 1.0800 1.9800 0 name "poste_6_11" }
+    MazePost { translation 1.0800 2.1600 0 name "poste_6_12" }
+    MazePost { translation 1.0800 2.3400 0 name "poste_6_13" }
+    MazePost { translation 1.0800 2.5200 0 name "poste_6_14" }
+    MazePost { translation 1.0800 2.7000 0 name "poste_6_15" }
+    MazePost { translation 1.0800 2.8800 0 name "poste_6_16" }
+    MazePost { translation 1.2600 0.0000 0 name "poste_7_0" }
+    MazePost { translation 1.2600 0.1800 0 name "poste_7_1" }
+    MazePost { translation 1.2600 0.3600 0 name "poste_7_2" }
+    MazePost { translation 1.2600 0.5400 0 name "poste_7_3" }
+    MazePost { translation 1.2600 0.7200 0 name "poste_7_4" }
+    MazePost { translation 1.2600 0.9000 0 name "poste_7_5" }
+    MazePost { translation 1.2600 1.0800 0 name "poste_7_6" }
+    MazePost { translation 1.2600 1.2600 0 name "poste_7_7" }
+    MazePost { translation 1.2600 1.4400 0 name "poste_7_8" }
+    MazePost { translation 1.2600 1.6200 0 name "poste_7_9" }
+    MazePost { translation 1.2600 1.8000 0 name "poste_7_10" }
+    MazePost { translation 1.2600 1.9800 0 name "poste_7_11" }
+    MazePost { translation 1.2600 2.1600 0 name "poste_7_12" }
+    MazePost { translation 1.2600 2.3400 0 name "poste_7_13" }
+    MazePost { translation 1.2600 2.5200 0 name "poste_7_14" }
+    MazePost { translation 1.2600 2.7000 0 name "poste_7_15" }
+    MazePost { translation 1.2600 2.8800 0 name "poste_7_16" }
+    MazePost { translation 1.4400 0.0000 0 name "poste_8_0" }
+    MazePost { translation 1.4400 0.1800 0 name "poste_8_1" }
+    MazePost { translation 1.4400 0.3600 0 name "poste_8_2" }
+    MazePost { translation 1.4400 0.5400 0 name "poste_8_3" }
+    MazePost { translation 1.4400 0.7200 0 name "poste_8_4" }
+    MazePost { translation 1.4400 0.9000 0 name "poste_8_5" }
+    MazePost { translation 1.4400 1.0800 0 name "poste_8_6" }
+    MazePost { translation 1.4400 1.2600 0 name "poste_8_7" }
+    MazePost { translation 1.4400 1.4400 0 name "poste_8_8" }
+    MazePost { translation 1.4400 1.6200 0 name "poste_8_9" }
+    MazePost { translation 1.4400 1.8000 0 name "poste_8_10" }
+    MazePost { translation 1.4400 1.9800 0 name "poste_8_11" }
+    MazePost { translation 1.4400 2.1600 0 name "poste_8_12" }
+    MazePost { translation 1.4400 2.3400 0 name "poste_8_13" }
+    MazePost { translation 1.4400 2.5200 0 name "poste_8_14" }
+    MazePost { translation 1.4400 2.7000 0 name "poste_8_15" }
+    MazePost { translation 1.4400 2.8800 0 name "poste_8_16" }
+    MazePost { translation 1.6200 0.0000 0 name "poste_9_0" }
+    MazePost { translation 1.6200 0.1800 0 name "poste_9_1" }
+    MazePost { translation 1.6200 0.3600 0 name "poste_9_2" }
+    MazePost { translation 1.6200 0.5400 0 name "poste_9_3" }
+    MazePost { translation 1.6200 0.7200 0 name "poste_9_4" }
+    MazePost { translation 1.6200 0.9000 0 name "poste_9_5" }
+    MazePost { translation 1.6200 1.0800 0 name "poste_9_6" }
+    MazePost { translation 1.6200 1.2600 0 name "poste_9_7" }
+    MazePost { translation 1.6200 1.4400 0 name "poste_9_8" }
+    MazePost { translation 1.6200 1.6200 0 name "poste_9_9" }
+    MazePost { translation 1.6200 1.8000 0 name "poste_9_10" }
+    MazePost { translation 1.6200 1.9800 0 name "poste_9_11" }
+    MazePost { translation 1.6200 2.1600 0 name "poste_9_12" }
+    MazePost { translation 1.6200 2.3400 0 name "poste_9_13" }
+    MazePost { translation 1.6200 2.5200 0 name "poste_9_14" }
+    MazePost { translation 1.6200 2.7000 0 name "poste_9_15" }
+    MazePost { translation 1.6200 2.8800 0 name "poste_9_16" }
+    MazePost { translation 1.8000 0.0000 0 name "poste_10_0" }
+    MazePost { translation 1.8000 0.1800 0 name "poste_10_1" }
+    MazePost { translation 1.8000 0.3600 0 name "poste_10_2" }
+    MazePost { translation 1.8000 0.5400 0 name "poste_10_3" }
+    MazePost { translation 1.8000 0.7200 0 name "poste_10_4" }
+    MazePost { translation 1.8000 0.9000 0 name "poste_10_5" }
+    MazePost { translation 1.8000 1.0800 0 name "poste_10_6" }
+    MazePost { translation 1.8000 1.2600 0 name "poste_10_7" }
+    MazePost { translation 1.8000 1.4400 0 name "poste_10_8" }
+    MazePost { translation 1.8000 1.6200 0 name "poste_10_9" }
+    MazePost { translation 1.8000 1.8000 0 name "poste_10_10" }
+    MazePost { translation 1.8000 1.9800 0 name "poste_10_11" }
+    MazePost { translation 1.8000 2.1600 0 name "poste_10_12" }
+    MazePost { translation 1.8000 2.3400 0 name "poste_10_13" }
+    MazePost { translation 1.8000 2.5200 0 name "poste_10_14" }
+    MazePost { translation 1.8000 2.7000 0 name "poste_10_15" }
+    MazePost { translation 1.8000 2.8800 0 name "poste_10_16" }
+    MazePost { translation 1.9800 0.0000 0 name "poste_11_0" }
+    MazePost { translation 1.9800 0.1800 0 name "poste_11_1" }
+    MazePost { translation 1.9800 0.3600 0 name "poste_11_2" }
+    MazePost { translation 1.9800 0.5400 0 name "poste_11_3" }
+    MazePost { translation 1.9800 0.7200 0 name "poste_11_4" }
+    MazePost { translation 1.9800 0.9000 0 name "poste_11_5" }
+    MazePost { translation 1.9800 1.0800 0 name "poste_11_6" }
+    MazePost { translation 1.9800 1.2600 0 name "poste_11_7" }
+    MazePost { translation 1.9800 1.4400 0 name "poste_11_8" }
+    MazePost { translation 1.9800 1.6200 0 name "poste_11_9" }
+    MazePost { translation 1.9800 1.8000 0 name "poste_11_10" }
+    MazePost { translation 1.9800 1.9800 0 name "poste_11_11" }
+    MazePost { translation 1.9800 2.1600 0 name "poste_11_12" }
+    MazePost { translation 1.9800 2.3400 0 name "poste_11_13" }
+    MazePost { translation 1.9800 2.5200 0 name "poste_11_14" }
+    MazePost { translation 1.9800 2.7000 0 name "poste_11_15" }
+    MazePost { translation 1.9800 2.8800 0 name "poste_11_16" }
+    MazePost { translation 2.1600 0.0000 0 name "poste_12_0" }
+    MazePost { translation 2.1600 0.1800 0 name "poste_12_1" }
+    MazePost { translation 2.1600 0.3600 0 name "poste_12_2" }
+    MazePost { translation 2.1600 0.5400 0 name "poste_12_3" }
+    MazePost { translation 2.1600 0.7200 0 name "poste_12_4" }
+    MazePost { translation 2.1600 0.9000 0 name "poste_12_5" }
+    MazePost { translation 2.1600 1.0800 0 name "poste_12_6" }
+    MazePost { translation 2.1600 1.2600 0 name "poste_12_7" }
+    MazePost { translation 2.1600 1.4400 0 name "poste_12_8" }
+    MazePost { translation 2.1600 1.6200 0 name "poste_12_9" }
+    MazePost { translation 2.1600 1.8000 0 name "poste_12_10" }
+    MazePost { translation 2.1600 1.9800 0 name "poste_12_11" }
+    MazePost { translation 2.1600 2.1600 0 name "poste_12_12" }
+    MazePost { translation 2.1600 2.3400 0 name "poste_12_13" }
+    MazePost { translation 2.1600 2.5200 0 name "poste_12_14" }
+    MazePost { translation 2.1600 2.7000 0 name "poste_12_15" }
+    MazePost { translation 2.1600 2.8800 0 name "poste_12_16" }
+    MazePost { translation 2.3400 0.0000 0 name "poste_13_0" }
+    MazePost { translation 2.3400 0.1800 0 name "poste_13_1" }
+    MazePost { translation 2.3400 0.3600 0 name "poste_13_2" }
+    MazePost { translation 2.3400 0.5400 0 name "poste_13_3" }
+    MazePost { translation 2.3400 0.7200 0 name "poste_13_4" }
+    MazePost { translation 2.3400 0.9000 0 name "poste_13_5" }
+    MazePost { translation 2.3400 1.0800 0 name "poste_13_6" }
+    MazePost { translation 2.3400 1.2600 0 name "poste_13_7" }
+    MazePost { translation 2.3400 1.4400 0 name "poste_13_8" }
+    MazePost { translation 2.3400 1.6200 0 name "poste_13_9" }
+    MazePost { translation 2.3400 1.8000 0 name "poste_13_10" }
+    MazePost { translation 2.3400 1.9800 0 name "poste_13_11" }
+    MazePost { translation 2.3400 2.1600 0 name "poste_13_12" }
+    MazePost { translation 2.3400 2.3400 0 name "poste_13_13" }
+    MazePost { translation 2.3400 2.5200 0 name "poste_13_14" }
+    MazePost { translation 2.3400 2.7000 0 name "poste_13_15" }
+    MazePost { translation 2.3400 2.8800 0 name "poste_13_16" }
+    MazePost { translation 2.5200 0.0000 0 name "poste_14_0" }
+    MazePost { translation 2.5200 0.1800 0 name "poste_14_1" }
+    MazePost { translation 2.5200 0.3600 0 name "poste_14_2" }
+    MazePost { translation 2.5200 0.5400 0 name "poste_14_3" }
+    MazePost { translation 2.5200 0.7200 0 name "poste_14_4" }
+    MazePost { translation 2.5200 0.9000 0 name "poste_14_5" }
+    MazePost { translation 2.5200 1.0800 0 name "poste_14_6" }
+    MazePost { translation 2.5200 1.2600 0 name "poste_14_7" }
+    MazePost { translation 2.5200 1.4400 0 name "poste_14_8" }
+    MazePost { translation 2.5200 1.6200 0 name "poste_14_9" }
+    MazePost { translation 2.5200 1.8000 0 name "poste_14_10" }
+    MazePost { translation 2.5200 1.9800 0 name "poste_14_11" }
+    MazePost { translation 2.5200 2.1600 0 name "poste_14_12" }
+    MazePost { translation 2.5200 2.3400 0 name "poste_14_13" }
+    MazePost { translation 2.5200 2.5200 0 name "poste_14_14" }
+    MazePost { translation 2.5200 2.7000 0 name "poste_14_15" }
+    MazePost { translation 2.5200 2.8800 0 name "poste_14_16" }
+    MazePost { translation 2.7000 0.0000 0 name "poste_15_0" }
+    MazePost { translation 2.7000 0.1800 0 name "poste_15_1" }
+    MazePost { translation 2.7000 0.3600 0 name "poste_15_2" }
+    MazePost { translation 2.7000 0.5400 0 name "poste_15_3" }
+    MazePost { translation 2.7000 0.7200 0 name "poste_15_4" }
+    MazePost { translation 2.7000 0.9000 0 name "poste_15_5" }
+    MazePost { translation 2.7000 1.0800 0 name "poste_15_6" }
+    MazePost { translation 2.7000 1.2600 0 name "poste_15_7" }
+    MazePost { translation 2.7000 1.4400 0 name "poste_15_8" }
+    MazePost { translation 2.7000 1.6200 0 name "poste_15_9" }
+    MazePost { translation 2.7000 1.8000 0 name "poste_15_10" }
+    MazePost { translation 2.7000 1.9800 0 name "poste_15_11" }
+    MazePost { translation 2.7000 2.1600 0 name "poste_15_12" }
+    MazePost { translation 2.7000 2.3400 0 name "poste_15_13" }
+    MazePost { translation 2.7000 2.5200 0 name "poste_15_14" }
+    MazePost { translation 2.7000 2.7000 0 name "poste_15_15" }
+    MazePost { translation 2.7000 2.8800 0 name "poste_15_16" }
+    MazePost { translation 2.8800 0.0000 0 name "poste_16_0" }
+    MazePost { translation 2.8800 0.1800 0 name "poste_16_1" }
+    MazePost { translation 2.8800 0.3600 0 name "poste_16_2" }
+    MazePost { translation 2.8800 0.5400 0 name "poste_16_3" }
+    MazePost { translation 2.8800 0.7200 0 name "poste_16_4" }
+    MazePost { translation 2.8800 0.9000 0 name "poste_16_5" }
+    MazePost { translation 2.8800 1.0800 0 name "poste_16_6" }
+    MazePost { translation 2.8800 1.2600 0 name "poste_16_7" }
+    MazePost { translation 2.8800 1.4400 0 name "poste_16_8" }
+    MazePost { translation 2.8800 1.6200 0 name "poste_16_9" }
+    MazePost { translation 2.8800 1.8000 0 name "poste_16_10" }
+    MazePost { translation 2.8800 1.9800 0 name "poste_16_11" }
+    MazePost { translation 2.8800 2.1600 0 name "poste_16_12" }
+    MazePost { translation 2.8800 2.3400 0 name "poste_16_13" }
+    MazePost { translation 2.8800 2.5200 0 name "poste_16_14" }
+    MazePost { translation 2.8800 2.7000 0 name "poste_16_15" }
+    MazePost { translation 2.8800 2.8800 0 name "poste_16_16" }
+    MazeWall { translation 0.0900 0.0000 0 name "pared_h_0_0" length 0.1680 }
+    MazeWall { translation 0.2700 0.0000 0 name "pared_h_1_0" length 0.1680 }
+    MazeWall { translation 0.4500 0.0000 0 name "pared_h_2_0" length 0.1680 }
+    MazeWall { translation 0.6300 0.0000 0 name "pared_h_3_0" length 0.1680 }
+    MazeWall { translation 0.8100 0.0000 0 name "pared_h_4_0" length 0.1680 }
+    MazeWall { translation 0.9900 0.0000 0 name "pared_h_5_0" length 0.1680 }
+    MazeWall { translation 1.1700 0.0000 0 name "pared_h_6_0" length 0.1680 }
+    MazeWall { translation 1.3500 0.0000 0 name "pared_h_7_0" length 0.1680 }
+    MazeWall { translation 1.5300 0.0000 0 name "pared_h_8_0" length 0.1680 }
+    MazeWall { translation 1.7100 0.0000 0 name "pared_h_9_0" length 0.1680 }
+    MazeWall { translation 1.8900 0.0000 0 name "pared_h_10_0" length 0.1680 }
+    MazeWall { translation 2.0700 0.0000 0 name "pared_h_11_0" length 0.1680 }
+    MazeWall { translation 2.2500 0.0000 0 name "pared_h_12_0" length 0.1680 }
+    MazeWall { translation 2.4300 0.0000 0 name "pared_h_13_0" length 0.1680 }
+    MazeWall { translation 2.6100 0.0000 0 name "pared_h_14_0" length 0.1680 }
+    MazeWall { translation 2.7900 0.0000 0 name "pared_h_15_0" length 0.1680 }
+    MazeWall { translation 0.4500 0.1800 0 name "pared_h_2_1" length 0.1680 }
+    MazeWall { translation 1.1700 0.1800 0 name "pared_h_6_1" length 0.1680 }
+    MazeWall { translation 1.3500 0.1800 0 name "pared_h_7_1" length 0.1680 }
+    MazeWall { translation 1.7100 0.1800 0 name "pared_h_9_1" length 0.1680 }
+    MazeWall { translation 2.6100 0.1800 0 name "pared_h_14_1" length 0.1680 }
+    MazeWall { translation 2.7900 0.1800 0 name "pared_h_15_1" length 0.1680 }
+    MazeWall { translation 0.2700 0.3600 0 name "pared_h_1_2" length 0.1680 }
+    MazeWall { translation 0.8100 0.3600 0 name "pared_h_4_2" length 0.1680 }
+    MazeWall { translation 2.0700 0.3600 0 name "pared_h_11_2" length 0.1680 }
+    MazeWall { translation 2.4300 0.3600 0 name "pared_h_13_2" length 0.1680 }
+    MazeWall { translation 2.6100 0.3600 0 name "pared_h_14_2" length 0.1680 }
+    MazeWall { translation 0.4500 0.5400 0 name "pared_h_2_3" length 0.1680 }
+    MazeWall { translation 0.6300 0.5400 0 name "pared_h_3_3" length 0.1680 }
+    MazeWall { translation 0.9900 0.5400 0 name "pared_h_5_3" length 0.1680 }
+    MazeWall { translation 1.8900 0.5400 0 name "pared_h_10_3" length 0.1680 }
+    MazeWall { translation 2.0700 0.5400 0 name "pared_h_11_3" length 0.1680 }
+    MazeWall { translation 2.2500 0.5400 0 name "pared_h_12_3" length 0.1680 }
+    MazeWall { translation 2.6100 0.5400 0 name "pared_h_14_3" length 0.1680 }
+    MazeWall { translation 0.6300 0.7200 0 name "pared_h_3_4" length 0.1680 }
+    MazeWall { translation 0.8100 0.7200 0 name "pared_h_4_4" length 0.1680 }
+    MazeWall { translation 1.3500 0.7200 0 name "pared_h_7_4" length 0.1680 }
+    MazeWall { translation 1.5300 0.7200 0 name "pared_h_8_4" length 0.1680 }
+    MazeWall { translation 1.8900 0.7200 0 name "pared_h_10_4" length 0.1680 }
+    MazeWall { translation 2.0700 0.7200 0 name "pared_h_11_4" length 0.1680 }
+    MazeWall { translation 2.2500 0.7200 0 name "pared_h_12_4" length 0.1680 }
+    MazeWall { translation 2.7900 0.7200 0 name "pared_h_15_4" length 0.1680 }
+    MazeWall { translation 0.0900 0.9000 0 name "pared_h_0_5" length 0.1680 }
+    MazeWall { translation 0.2700 0.9000 0 name "pared_h_1_5" length 0.1680 }
+    MazeWall { translation 1.1700 0.9000 0 name "pared_h_6_5" length 0.1680 }
+    MazeWall { translation 1.3500 0.9000 0 name "pared_h_7_5" length 0.1680 }
+    MazeWall { translation 1.7100 0.9000 0 name "pared_h_9_5" length 0.1680 }
+    MazeWall { translation 2.0700 0.9000 0 name "pared_h_11_5" length 0.1680 }
+    MazeWall { translation 2.2500 0.9000 0 name "pared_h_12_5" length 0.1680 }
+    MazeWall { translation 2.4300 0.9000 0 name "pared_h_13_5" length 0.1680 }
+    MazeWall { translation 0.2700 1.0800 0 name "pared_h_1_6" length 0.1680 }
+    MazeWall { translation 0.4500 1.0800 0 name "pared_h_2_6" length 0.1680 }
+    MazeWall { translation 0.8100 1.0800 0 name "pared_h_4_6" length 0.1680 }
+    MazeWall { translation 0.9900 1.0800 0 name "pared_h_5_6" length 0.1680 }
+    MazeWall { translation 1.5300 1.0800 0 name "pared_h_8_6" length 0.1680 }
+    MazeWall { translation 2.2500 1.0800 0 name "pared_h_12_6" length 0.1680 }
+    MazeWall { translation 2.4300 1.0800 0 name "pared_h_13_6" length 0.1680 }
+    MazeWall { translation 0.6300 1.2600 0 name "pared_h_3_7" length 0.1680 }
+    MazeWall { translation 0.9900 1.2600 0 name "pared_h_5_7" length 0.1680 }
+    MazeWall { translation 1.3500 1.2600 0 name "pared_h_7_7" length 0.1680 }
+    MazeWall { translation 1.5300 1.2600 0 name "pared_h_8_7" length 0.1680 }
+    MazeWall { translation 1.7100 1.2600 0 name "pared_h_9_7" length 0.1680 }
+    MazeWall { translation 1.8900 1.2600 0 name "pared_h_10_7" length 0.1680 }
+    MazeWall { translation 2.6100 1.2600 0 name "pared_h_14_7" length 0.1680 }
+    MazeWall { translation 0.2700 1.4400 0 name "pared_h_1_8" length 0.1680 }
+    MazeWall { translation 0.4500 1.4400 0 name "pared_h_2_8" length 0.1680 }
+    MazeWall { translation 0.6300 1.4400 0 name "pared_h_3_8" length 0.1680 }
+    MazeWall { translation 1.8900 1.4400 0 name "pared_h_10_8" length 0.1680 }
+    MazeWall { translation 2.6100 1.4400 0 name "pared_h_14_8" length 0.1680 }
+    MazeWall { translation 1.3500 1.6200 0 name "pared_h_7_9" length 0.1680 }
+    MazeWall { translation 1.5300 1.6200 0 name "pared_h_8_9" length 0.1680 }
+    MazeWall { translation 1.7100 1.6200 0 name "pared_h_9_9" length 0.1680 }
+    MazeWall { translation 1.8900 1.6200 0 name "pared_h_10_9" length 0.1680 }
+    MazeWall { translation 2.0700 1.6200 0 name "pared_h_11_9" length 0.1680 }
+    MazeWall { translation 2.2500 1.6200 0 name "pared_h_12_9" length 0.1680 }
+    MazeWall { translation 2.4300 1.6200 0 name "pared_h_13_9" length 0.1680 }
+    MazeWall { translation 2.6100 1.6200 0 name "pared_h_14_9" length 0.1680 }
+    MazeWall { translation 0.0900 1.8000 0 name "pared_h_0_10" length 0.1680 }
+    MazeWall { translation 0.2700 1.8000 0 name "pared_h_1_10" length 0.1680 }
+    MazeWall { translation 0.9900 1.8000 0 name "pared_h_5_10" length 0.1680 }
+    MazeWall { translation 1.5300 1.8000 0 name "pared_h_8_10" length 0.1680 }
+    MazeWall { translation 1.7100 1.8000 0 name "pared_h_9_10" length 0.1680 }
+    MazeWall { translation 1.8900 1.8000 0 name "pared_h_10_10" length 0.1680 }
+    MazeWall { translation 2.0700 1.8000 0 name "pared_h_11_10" length 0.1680 }
+    MazeWall { translation 2.2500 1.8000 0 name "pared_h_12_10" length 0.1680 }
+    MazeWall { translation 2.6100 1.8000 0 name "pared_h_14_10" length 0.1680 }
+    MazeWall { translation 0.0900 1.9800 0 name "pared_h_0_11" length 0.1680 }
+    MazeWall { translation 0.9900 1.9800 0 name "pared_h_5_11" length 0.1680 }
+    MazeWall { translation 1.3500 1.9800 0 name "pared_h_7_11" length 0.1680 }
+    MazeWall { translation 1.8900 1.9800 0 name "pared_h_10_11" length 0.1680 }
+    MazeWall { translation 0.6300 2.1600 0 name "pared_h_3_12" length 0.1680 }
+    MazeWall { translation 0.8100 2.1600 0 name "pared_h_4_12" length 0.1680 }
+    MazeWall { translation 0.9900 2.1600 0 name "pared_h_5_12" length 0.1680 }
+    MazeWall { translation 1.7100 2.1600 0 name "pared_h_9_12" length 0.1680 }
+    MazeWall { translation 2.2500 2.1600 0 name "pared_h_12_12" length 0.1680 }
+    MazeWall { translation 0.2700 2.3400 0 name "pared_h_1_13" length 0.1680 }
+    MazeWall { translation 0.4500 2.3400 0 name "pared_h_2_13" length 0.1680 }
+    MazeWall { translation 0.9900 2.3400 0 name "pared_h_5_13" length 0.1680 }
+    MazeWall { translation 1.1700 2.3400 0 name "pared_h_6_13" length 0.1680 }
+    MazeWall { translation 1.8900 2.3400 0 name "pared_h_10_13" length 0.1680 }
+    MazeWall { translation 2.4300 2.3400 0 name "pared_h_13_13" length 0.1680 }
+    MazeWall { translation 2.6100 2.3400 0 name "pared_h_14_13" length 0.1680 }
+    MazeWall { translation 0.4500 2.5200 0 name "pared_h_2_14" length 0.1680 }
+    MazeWall { translation 0.6300 2.5200 0 name "pared_h_3_14" length 0.1680 }
+    MazeWall { translation 0.8100 2.5200 0 name "pared_h_4_14" length 0.1680 }
+    MazeWall { translation 0.9900 2.5200 0 name "pared_h_5_14" length 0.1680 }
+    MazeWall { translation 1.1700 2.5200 0 name "pared_h_6_14" length 0.1680 }
+    MazeWall { translation 1.8900 2.5200 0 name "pared_h_10_14" length 0.1680 }
+    MazeWall { translation 2.0700 2.5200 0 name "pared_h_11_14" length 0.1680 }
+    MazeWall { translation 2.2500 2.5200 0 name "pared_h_12_14" length 0.1680 }
+    MazeWall { translation 2.4300 2.5200 0 name "pared_h_13_14" length 0.1680 }
+    MazeWall { translation 0.2700 2.7000 0 name "pared_h_1_15" length 0.1680 }
+    MazeWall { translation 0.6300 2.7000 0 name "pared_h_3_15" length 0.1680 }
+    MazeWall { translation 1.3500 2.7000 0 name "pared_h_7_15" length 0.1680 }
+    MazeWall { translation 1.5300 2.7000 0 name "pared_h_8_15" length 0.1680 }
+    MazeWall { translation 2.0700 2.7000 0 name "pared_h_11_15" length 0.1680 }
+    MazeWall { translation 2.2500 2.7000 0 name "pared_h_12_15" length 0.1680 }
+    MazeWall { translation 2.4300 2.7000 0 name "pared_h_13_15" length 0.1680 }
+    MazeWall { translation 2.6100 2.7000 0 name "pared_h_14_15" length 0.1680 }
+    MazeWall { translation 0.0900 2.8800 0 name "pared_h_0_16" length 0.1680 }
+    MazeWall { translation 0.2700 2.8800 0 name "pared_h_1_16" length 0.1680 }
+    MazeWall { translation 0.4500 2.8800 0 name "pared_h_2_16" length 0.1680 }
+    MazeWall { translation 0.6300 2.8800 0 name "pared_h_3_16" length 0.1680 }
+    MazeWall { translation 0.8100 2.8800 0 name "pared_h_4_16" length 0.1680 }
+    MazeWall { translation 0.9900 2.8800 0 name "pared_h_5_16" length 0.1680 }
+    MazeWall { translation 1.1700 2.8800 0 name "pared_h_6_16" length 0.1680 }
+    MazeWall { translation 1.3500 2.8800 0 name "pared_h_7_16" length 0.1680 }
+    MazeWall { translation 1.5300 2.8800 0 name "pared_h_8_16" length 0.1680 }
+    MazeWall { translation 1.7100 2.8800 0 name "pared_h_9_16" length 0.1680 }
+    MazeWall { translation 1.8900 2.8800 0 name "pared_h_10_16" length 0.1680 }
+    MazeWall { translation 2.0700 2.8800 0 name "pared_h_11_16" length 0.1680 }
+    MazeWall { translation 2.2500 2.8800 0 name "pared_h_12_16" length 0.1680 }
+    MazeWall { translation 2.4300 2.8800 0 name "pared_h_13_16" length 0.1680 }
+    MazeWall { translation 2.6100 2.8800 0 name "pared_h_14_16" length 0.1680 }
+    MazeWall { translation 2.7900 2.8800 0 name "pared_h_15_16" length 0.1680 }
+    MazeWall { translation 0.0000 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_0_0" length 0.1680 }
+    MazeWall { translation 0.0000 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_0_1" length 0.1680 }
+    MazeWall { translation 0.0000 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_0_2" length 0.1680 }
+    MazeWall { translation 0.0000 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_0_3" length 0.1680 }
+    MazeWall { translation 0.0000 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_0_4" length 0.1680 }
+    MazeWall { translation 0.0000 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_0_5" length 0.1680 }
+    MazeWall { translation 0.0000 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_0_6" length 0.1680 }
+    MazeWall { translation 0.0000 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_0_7" length 0.1680 }
+    MazeWall { translation 0.0000 1.5300 0 rotation 0 0 1 1.5708 name "pared_v_0_8" length 0.1680 }
+    MazeWall { translation 0.0000 1.7100 0 rotation 0 0 1 1.5708 name "pared_v_0_9" length 0.1680 }
+    MazeWall { translation 0.0000 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_0_10" length 0.1680 }
+    MazeWall { translation 0.0000 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_0_11" length 0.1680 }
+    MazeWall { translation 0.0000 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_0_12" length 0.1680 }
+    MazeWall { translation 0.0000 2.4300 0 rotation 0 0 1 1.5708 name "pared_v_0_13" length 0.1680 }
+    MazeWall { translation 0.0000 2.6100 0 rotation 0 0 1 1.5708 name "pared_v_0_14" length 0.1680 }
+    MazeWall { translation 0.0000 2.7900 0 rotation 0 0 1 1.5708 name "pared_v_0_15" length 0.1680 }
+    MazeWall { translation 0.1800 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_1_0" length 0.1680 }
+    MazeWall { translation 0.1800 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_1_1" length 0.1680 }
+    MazeWall { translation 0.1800 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_1_2" length 0.1680 }
+    MazeWall { translation 0.1800 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_1_3" length 0.1680 }
+    MazeWall { translation 0.1800 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_1_7" length 0.1680 }
+    MazeWall { translation 0.1800 1.5300 0 rotation 0 0 1 1.5708 name "pared_v_1_8" length 0.1680 }
+    MazeWall { translation 0.1800 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_1_12" length 0.1680 }
+    MazeWall { translation 0.1800 2.4300 0 rotation 0 0 1 1.5708 name "pared_v_1_13" length 0.1680 }
+    MazeWall { translation 0.3600 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_2_3" length 0.1680 }
+    MazeWall { translation 0.3600 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_2_4" length 0.1680 }
+    MazeWall { translation 0.3600 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_2_6" length 0.1680 }
+    MazeWall { translation 0.3600 1.7100 0 rotation 0 0 1 1.5708 name "pared_v_2_9" length 0.1680 }
+    MazeWall { translation 0.3600 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_2_11" length 0.1680 }
+    MazeWall { translation 0.3600 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_2_12" length 0.1680 }
+    MazeWall { translation 0.3600 2.6100 0 rotation 0 0 1 1.5708 name "pared_v_2_14" length 0.1680 }
+    MazeWall { translation 0.5400 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_3_1" length 0.1680 }
+    MazeWall { translation 0.5400 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_3_4" length 0.1680 }
+    MazeWall { translation 0.5400 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_3_5" length 0.1680 }
+    MazeWall { translation 0.5400 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_3_7" length 0.1680 }
+    MazeWall { translation 0.5400 1.7100 0 rotation 0 0 1 1.5708 name "pared_v_3_9" length 0.1680 }
+    MazeWall { translation 0.5400 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_3_10" length 0.1680 }
+    MazeWall { translation 0.5400 2.7900 0 rotation 0 0 1 1.5708 name "pared_v_3_15" length 0.1680 }
+    MazeWall { translation 0.7200 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_4_1" length 0.1680 }
+    MazeWall { translation 0.7200 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_4_2" length 0.1680 }
+    MazeWall { translation 0.7200 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_4_3" length 0.1680 }
+    MazeWall { translation 0.7200 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_4_5" length 0.1680 }
+    MazeWall { translation 0.7200 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_4_6" length 0.1680 }
+    MazeWall { translation 0.7200 1.5300 0 rotation 0 0 1 1.5708 name "pared_v_4_8" length 0.1680 }
+    MazeWall { translation 0.7200 1.7100 0 rotation 0 0 1 1.5708 name "pared_v_4_9" length 0.1680 }
+    MazeWall { translation 0.7200 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_4_10" length 0.1680 }
+    MazeWall { translation 0.7200 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_4_11" length 0.1680 }
+    MazeWall { translation 0.7200 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_4_12" length 0.1680 }
+    MazeWall { translation 0.7200 2.4300 0 rotation 0 0 1 1.5708 name "pared_v_4_13" length 0.1680 }
+    MazeWall { translation 0.9000 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_5_0" length 0.1680 }
+    MazeWall { translation 0.9000 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_5_4" length 0.1680 }
+    MazeWall { translation 0.9000 1.5300 0 rotation 0 0 1 1.5708 name "pared_v_5_8" length 0.1680 }
+    MazeWall { translation 0.9000 1.7100 0 rotation 0 0 1 1.5708 name "pared_v_5_9" length 0.1680 }
+    MazeWall { translation 0.9000 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_5_10" length 0.1680 }
+    MazeWall { translation 0.9000 2.6100 0 rotation 0 0 1 1.5708 name "pared_v_5_14" length 0.1680 }
+    MazeWall { translation 1.0800 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_6_1" length 0.1680 }
+    MazeWall { translation 1.0800 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_6_2" length 0.1680 }
+    MazeWall { translation 1.0800 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_6_3" length 0.1680 }
+    MazeWall { translation 1.0800 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_6_4" length 0.1680 }
+    MazeWall { translation 1.0800 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_6_5" length 0.1680 }
+    MazeWall { translation 1.0800 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_6_7" length 0.1680 }
+    MazeWall { translation 1.0800 1.5300 0 rotation 0 0 1 1.5708 name "pared_v_6_8" length 0.1680 }
+    MazeWall { translation 1.0800 2.7900 0 rotation 0 0 1 1.5708 name "pared_v_6_15" length 0.1680 }
+    MazeWall { translation 1.2600 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_7_2" length 0.1680 }
+    MazeWall { translation 1.2600 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_7_6" length 0.1680 }
+    MazeWall { translation 1.2600 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_7_7" length 0.1680 }
+    MazeWall { translation 1.2600 1.5300 0 rotation 0 0 1 1.5708 name "pared_v_7_8" length 0.1680 }
+    MazeWall { translation 1.2600 1.7100 0 rotation 0 0 1 1.5708 name "pared_v_7_9" length 0.1680 }
+    MazeWall { translation 1.2600 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_7_10" length 0.1680 }
+    MazeWall { translation 1.2600 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_7_11" length 0.1680 }
+    MazeWall { translation 1.2600 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_7_12" length 0.1680 }
+    MazeWall { translation 1.2600 2.6100 0 rotation 0 0 1 1.5708 name "pared_v_7_14" length 0.1680 }
+    MazeWall { translation 1.4400 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_8_2" length 0.1680 }
+    MazeWall { translation 1.4400 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_8_5" length 0.1680 }
+    MazeWall { translation 1.4400 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_8_12" length 0.1680 }
+    MazeWall { translation 1.4400 2.4300 0 rotation 0 0 1 1.5708 name "pared_v_8_13" length 0.1680 }
+    MazeWall { translation 1.6200 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_9_1" length 0.1680 }
+    MazeWall { translation 1.6200 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_9_2" length 0.1680 }
+    MazeWall { translation 1.6200 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_9_7" length 0.1680 }
+    MazeWall { translation 1.6200 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_9_10" length 0.1680 }
+    MazeWall { translation 1.6200 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_9_11" length 0.1680 }
+    MazeWall { translation 1.6200 2.4300 0 rotation 0 0 1 1.5708 name "pared_v_9_13" length 0.1680 }
+    MazeWall { translation 1.6200 2.6100 0 rotation 0 0 1 1.5708 name "pared_v_9_14" length 0.1680 }
+    MazeWall { translation 1.8000 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_10_2" length 0.1680 }
+    MazeWall { translation 1.8000 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_10_4" length 0.1680 }
+    MazeWall { translation 1.8000 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_10_5" length 0.1680 }
+    MazeWall { translation 1.8000 2.6100 0 rotation 0 0 1 1.5708 name "pared_v_10_14" length 0.1680 }
+    MazeWall { translation 1.8000 2.7900 0 rotation 0 0 1 1.5708 name "pared_v_10_15" length 0.1680 }
+    MazeWall { translation 1.9800 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_11_1" length 0.1680 }
+    MazeWall { translation 1.9800 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_11_5" length 0.1680 }
+    MazeWall { translation 1.9800 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_11_6" length 0.1680 }
+    MazeWall { translation 1.9800 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_11_7" length 0.1680 }
+    MazeWall { translation 1.9800 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_11_10" length 0.1680 }
+    MazeWall { translation 1.9800 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_11_12" length 0.1680 }
+    MazeWall { translation 2.1600 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_12_0" length 0.1680 }
+    MazeWall { translation 2.1600 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_12_1" length 0.1680 }
+    MazeWall { translation 2.1600 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_12_7" length 0.1680 }
+    MazeWall { translation 2.1600 1.5300 0 rotation 0 0 1 1.5708 name "pared_v_12_8" length 0.1680 }
+    MazeWall { translation 2.1600 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_12_11" length 0.1680 }
+    MazeWall { translation 2.1600 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_12_12" length 0.1680 }
+    MazeWall { translation 2.3400 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_13_1" length 0.1680 }
+    MazeWall { translation 2.3400 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_13_2" length 0.1680 }
+    MazeWall { translation 2.3400 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_13_3" length 0.1680 }
+    MazeWall { translation 2.3400 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_13_6" length 0.1680 }
+    MazeWall { translation 2.3400 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_13_7" length 0.1680 }
+    MazeWall { translation 2.3400 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_13_10" length 0.1680 }
+    MazeWall { translation 2.5200 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_14_3" length 0.1680 }
+    MazeWall { translation 2.5200 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_14_4" length 0.1680 }
+    MazeWall { translation 2.5200 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_14_5" length 0.1680 }
+    MazeWall { translation 2.5200 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_14_10" length 0.1680 }
+    MazeWall { translation 2.5200 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_14_11" length 0.1680 }
+    MazeWall { translation 2.5200 2.6100 0 rotation 0 0 1 1.5708 name "pared_v_14_14" length 0.1680 }
+    MazeWall { translation 2.7000 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_15_5" length 0.1680 }
+    MazeWall { translation 2.7000 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_15_6" length 0.1680 }
+    MazeWall { translation 2.7000 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_15_11" length 0.1680 }
+    MazeWall { translation 2.7000 2.4300 0 rotation 0 0 1 1.5708 name "pared_v_15_13" length 0.1680 }
+    MazeWall { translation 2.8800 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_16_0" length 0.1680 }
+    MazeWall { translation 2.8800 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_16_1" length 0.1680 }
+    MazeWall { translation 2.8800 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_16_2" length 0.1680 }
+    MazeWall { translation 2.8800 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_16_3" length 0.1680 }
+    MazeWall { translation 2.8800 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_16_4" length 0.1680 }
+    MazeWall { translation 2.8800 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_16_5" length 0.1680 }
+    MazeWall { translation 2.8800 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_16_6" length 0.1680 }
+    MazeWall { translation 2.8800 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_16_7" length 0.1680 }
+    MazeWall { translation 2.8800 1.5300 0 rotation 0 0 1 1.5708 name "pared_v_16_8" length 0.1680 }
+    MazeWall { translation 2.8800 1.7100 0 rotation 0 0 1 1.5708 name "pared_v_16_9" length 0.1680 }
+    MazeWall { translation 2.8800 1.8900 0 rotation 0 0 1 1.5708 name "pared_v_16_10" length 0.1680 }
+    MazeWall { translation 2.8800 2.0700 0 rotation 0 0 1 1.5708 name "pared_v_16_11" length 0.1680 }
+    MazeWall { translation 2.8800 2.2500 0 rotation 0 0 1 1.5708 name "pared_v_16_12" length 0.1680 }
+    MazeWall { translation 2.8800 2.4300 0 rotation 0 0 1 1.5708 name "pared_v_16_13" length 0.1680 }
+    MazeWall { translation 2.8800 2.6100 0 rotation 0 0 1 1.5708 name "pared_v_16_14" length 0.1680 }
+    MazeWall { translation 2.8800 2.7900 0 rotation 0 0 1 1.5708 name "pared_v_16_15" length 0.1680 }
+  ]
+}
+DEF MOUSE E-puck {
+  translation 0.0900 0.0900 0
+  rotation 0 0 1 1.5708
+  name "mouse"
+  controller "epuck_plantilla"
+  version "1"
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
+Robot {
+  name "arbitro"
+  controller "referee"
+  supervisor TRUE
+  customData "N=16 CELDA=0.1800 LABERINTO=practica_16x16_06"
+}

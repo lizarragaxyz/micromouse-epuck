@@ -10,10 +10,10 @@ EXTERNPROTO "../protos/MazePost.proto"
 WorldInfo {
   info [
     "Proyecto final Micromouse con e-puck"
-    "Laberinto: ejemplo_8x8 (8 x 8)"
+    "Laberinto: practica_8x8_08 (8 x 8)"
     "Mundo oficial del proyecto -- no editar (salvo el campo controller del e-puck)"
   ]
-  title "Micromouse - ejemplo_8x8"
+  title "Micromouse - practica_8x8_08"
   basicTimeStep 16
 }
 Viewpoint {
@@ -153,20 +153,19 @@ DEF LABERINTO Group {
     MazeWall { translation 1.3500 0.0000 0 name "pared_h_7_0" length 0.1680 }
     MazeWall { translation 0.9900 0.1800 0 name "pared_h_5_1" length 0.1680 }
     MazeWall { translation 0.4500 0.3600 0 name "pared_h_2_2" length 0.1680 }
-    MazeWall { translation 0.6300 0.3600 0 name "pared_h_3_2" length 0.1680 }
-    MazeWall { translation 0.9900 0.3600 0 name "pared_h_5_2" length 0.1680 }
-    MazeWall { translation 1.1700 0.3600 0 name "pared_h_6_2" length 0.1680 }
+    MazeWall { translation 0.2700 0.5400 0 name "pared_h_1_3" length 0.1680 }
     MazeWall { translation 0.6300 0.5400 0 name "pared_h_3_3" length 0.1680 }
     MazeWall { translation 0.8100 0.5400 0 name "pared_h_4_3" length 0.1680 }
-    MazeWall { translation 1.3500 0.5400 0 name "pared_h_7_3" length 0.1680 }
+    MazeWall { translation 0.9900 0.5400 0 name "pared_h_5_3" length 0.1680 }
     MazeWall { translation 0.0900 0.7200 0 name "pared_h_0_4" length 0.1680 }
-    MazeWall { translation 1.1700 0.7200 0 name "pared_h_6_4" length 0.1680 }
     MazeWall { translation 0.2700 0.9000 0 name "pared_h_1_5" length 0.1680 }
-    MazeWall { translation 0.8100 0.9000 0 name "pared_h_4_5" length 0.1680 }
-    MazeWall { translation 0.2700 1.0800 0 name "pared_h_1_6" length 0.1680 }
-    MazeWall { translation 0.6300 1.0800 0 name "pared_h_3_6" length 0.1680 }
+    MazeWall { translation 0.6300 0.9000 0 name "pared_h_3_5" length 0.1680 }
+    MazeWall { translation 0.9900 0.9000 0 name "pared_h_5_5" length 0.1680 }
+    MazeWall { translation 0.4500 1.0800 0 name "pared_h_2_6" length 0.1680 }
     MazeWall { translation 0.9900 1.0800 0 name "pared_h_5_6" length 0.1680 }
-    MazeWall { translation 1.1700 1.0800 0 name "pared_h_6_6" length 0.1680 }
+    MazeWall { translation 0.2700 1.2600 0 name "pared_h_1_7" length 0.1680 }
+    MazeWall { translation 0.4500 1.2600 0 name "pared_h_2_7" length 0.1680 }
+    MazeWall { translation 0.6300 1.2600 0 name "pared_h_3_7" length 0.1680 }
     MazeWall { translation 0.8100 1.2600 0 name "pared_h_4_7" length 0.1680 }
     MazeWall { translation 1.1700 1.2600 0 name "pared_h_6_7" length 0.1680 }
     MazeWall { translation 0.0900 1.4400 0 name "pared_h_0_8" length 0.1680 }
@@ -189,26 +188,28 @@ DEF LABERINTO Group {
     MazeWall { translation 0.1800 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_1_1" length 0.1680 }
     MazeWall { translation 0.1800 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_1_2" length 0.1680 }
     MazeWall { translation 0.1800 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_1_6" length 0.1680 }
-    MazeWall { translation 0.3600 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_2_1" length 0.1680 }
+    MazeWall { translation 0.3600 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_2_0" length 0.1680 }
     MazeWall { translation 0.3600 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_2_3" length 0.1680 }
-    MazeWall { translation 0.3600 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_2_6" length 0.1680 }
-    MazeWall { translation 0.3600 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_2_7" length 0.1680 }
-    MazeWall { translation 0.5400 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_3_0" length 0.1680 }
+    MazeWall { translation 0.3600 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_2_4" length 0.1680 }
+    MazeWall { translation 0.3600 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_2_5" length 0.1680 }
+    MazeWall { translation 0.5400 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_3_1" length 0.1680 }
+    MazeWall { translation 0.5400 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_3_2" length 0.1680 }
     MazeWall { translation 0.5400 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_3_3" length 0.1680 }
     MazeWall { translation 0.5400 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_3_4" length 0.1680 }
-    MazeWall { translation 0.5400 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_3_6" length 0.1680 }
     MazeWall { translation 0.7200 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_4_1" length 0.1680 }
-    MazeWall { translation 0.9000 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_5_0" length 0.1680 }
+    MazeWall { translation 0.7200 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_4_5" length 0.1680 }
+    MazeWall { translation 0.7200 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_4_6" length 0.1680 }
+    MazeWall { translation 0.9000 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_5_1" length 0.1680 }
     MazeWall { translation 0.9000 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_5_3" length 0.1680 }
     MazeWall { translation 0.9000 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_5_4" length 0.1680 }
-    MazeWall { translation 0.9000 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_5_5" length 0.1680 }
-    MazeWall { translation 0.9000 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_5_7" length 0.1680 }
     MazeWall { translation 1.0800 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_6_2" length 0.1680 }
-    MazeWall { translation 1.0800 0.8100 0 rotation 0 0 1 1.5708 name "pared_v_6_4" length 0.1680 }
+    MazeWall { translation 1.0800 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_6_3" length 0.1680 }
+    MazeWall { translation 1.0800 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_6_6" length 0.1680 }
+    MazeWall { translation 1.0800 1.3500 0 rotation 0 0 1 1.5708 name "pared_v_6_7" length 0.1680 }
     MazeWall { translation 1.2600 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_7_1" length 0.1680 }
+    MazeWall { translation 1.2600 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_7_2" length 0.1680 }
     MazeWall { translation 1.2600 0.6300 0 rotation 0 0 1 1.5708 name "pared_v_7_3" length 0.1680 }
     MazeWall { translation 1.2600 0.9900 0 rotation 0 0 1 1.5708 name "pared_v_7_5" length 0.1680 }
-    MazeWall { translation 1.2600 1.1700 0 rotation 0 0 1 1.5708 name "pared_v_7_6" length 0.1680 }
     MazeWall { translation 1.4400 0.0900 0 rotation 0 0 1 1.5708 name "pared_v_8_0" length 0.1680 }
     MazeWall { translation 1.4400 0.2700 0 rotation 0 0 1 1.5708 name "pared_v_8_1" length 0.1680 }
     MazeWall { translation 1.4400 0.4500 0 rotation 0 0 1 1.5708 name "pared_v_8_2" length 0.1680 }
@@ -234,5 +235,5 @@ Robot {
   name "arbitro"
   controller "referee"
   supervisor TRUE
-  customData "N=8 CELDA=0.1800 LABERINTO=ejemplo_8x8"
+  customData "N=8 CELDA=0.1800 LABERINTO=practica_8x8_08"
 }
