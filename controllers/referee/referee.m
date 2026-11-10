@@ -75,7 +75,7 @@ if isempty(equipo) || strcmp(equipo, '<none>')
     pos0  = wb_supervisor_field_get_sf_vec3f(fTras);
     rot0  = wb_supervisor_field_get_sf_rotation(fRot);
     wb_supervisor_set_label(2, 'Asigne su controlador: MOUSE -> controller', ...
-                            0.01, 0.01, 0.12, [1 0.85 0], 0, 'Arial');
+                            0.01, 0.01, 0.09, [1 0.85 0], 0, 'Arial');
     while wb_robot_step(TIME_STEP) ~= -1
         equipo = wb_supervisor_field_get_sf_string(campoCtrl);
         if ~isempty(equipo) && ~strcmp(equipo, '<none>'), break; end
@@ -101,8 +101,8 @@ end
 txtInfo = sprintf('Laberinto: %s', lab);
 if ~isempty(fase),  txtInfo = sprintf('Fase: %s   Turno: %s   %s', fase, turno, txtInfo); end
 if ~isempty(integrantes), txtInfo = sprintf('Integrantes: %s\n%s', integrantes, txtInfo); end
-wb_supervisor_set_label(2, txtTitulo, 0.01, 0.01, 0.12, [1 0.85 0], 0, 'Arial');
-wb_supervisor_set_label(3, txtInfo,   0.01, 0.075, 0.07, [1 1 1], 0, 'Arial');
+wb_supervisor_set_label(2, txtTitulo, 0.01, 0.01, 0.09, [1 0.85 0], 0, 'Arial');
+wb_supervisor_set_label(3, txtInfo,   0.01, 0.06, 0.055, [1 1 1], 0, 'Arial');
 
 estado      = 'EN_INICIO';    % EN_INICIO | CORRIENDO | REGRESANDO
 corridas    = zeros(0, 4);    % [t_salida, t_llegada, t_corrida, puntaje]
@@ -180,12 +180,13 @@ while wb_robot_step(TIME_STEP) ~= -1
             txtActual = sprintf('%.2f s (puntaje %.3f)', t - tSalida, (t - tSalida) + tSalida/FACTOR_PENALIZACION);
         else,                           txtActual = '--';
         end
+        [~, txtComp] = calificacion(corridas);
         txt = sprintf(['Tiempo: %.2f / %d s   Estado: %s\n' ...
                        'Corrida actual: %s\n' ...
-                       'Completas: %d   Anuladas: %d   Celdas: %d   Dist. meta: %d\nMejor: %s'], ...
+                       'Completas: %d   Anuladas: %d   Celdas: %d   Dist. meta: %d\nMejor: %s\n%s'], ...
                       t, TIEMPO_LIMITE, estado, txtActual, ...
-                      size(corridas,1), anuladas, nnz(visitadas), dMin, txtMejor);
-        wb_supervisor_set_label(0, txt, 0.01, 0.17, 0.07, [1 1 1], 0, 'Arial');
+                      size(corridas,1), anuladas, nnz(visitadas), dMin, txtMejor, txtComp);
+        wb_supervisor_set_label(0, txt, 0.01, 0.13, 0.055, [1 1 1], 0, 'Arial');
     end
 
     % ---- fin del concurso ----
@@ -209,6 +210,9 @@ else
     [mejorP, k] = min(corridas(:,4));
     mejorT = corridas(k,3);
 end
+primerT = NaN; rapidaT = NaN; % duracion de la primera corrida y de la mas rapida (evaluacion)
+if ~isempty(corridas), primerT = corridas(1,3); rapidaT = min(corridas(:,3)); end
+[comp, txtComp] = calificacion(corridas);  % [llegada regreso rapida total] (Reglamento 10.1)
 fprintf('[arbitro] FIN (%s) en t=%.3f s. Completas: %d  Mejor tiempo: %.3f s  Puntaje: %.3f  Celdas: %d  Dist. meta: %d\n', ...
         motivo, t, size(corridas,1), mejorT, mejorP, nnz(visitadas), dMin);
 
@@ -217,7 +221,7 @@ if ~exist(dirRes, 'dir'), mkdir(dirRes); end
 fecha = datestr(now, 'yyyy-mm-dd_HHMMSS'); %#ok<TNOW1,DATST>
 
 resumen = fullfile(dirRes, 'resultados.csv');
-encabezado = 'fecha,equipo,laberinto,completas,anuladas,celdas_visitadas,mejor_tiempo_s,mejor_puntaje,fin,t_fin_s,distancia_min,t_distancia_s';
+encabezado = 'fecha,equipo,laberinto,completas,anuladas,celdas_visitadas,mejor_tiempo_s,mejor_puntaje,fin,t_fin_s,distancia_min,t_distancia_s,primer_tiempo_s,menor_tiempo_s,llegada,regreso,corrida_rapida,calificacion_pct';
 if isfile(resumen)            % archivo de una version anterior del arbitro: se aparta
     fid = fopen(resumen, 'r'); l1 = fgetl(fid); fclose(fid);
     if ~ischar(l1) || ~strcmp(strtrim(l1), encabezado)
@@ -229,8 +233,8 @@ fid = fopen(resumen, 'a');
 if nuevo
     fprintf(fid, '%s\n', encabezado);
 end
-fprintf(fid, '%s,%s,%s,%d,%d,%d,%.3f,%.3f,%s,%.3f,%d,%.3f\n', fecha, equipo, lab, size(corridas,1), ...
-        anuladas, nnz(visitadas), mejorT, mejorP, motivo, t, dMin, tD);
+fprintf(fid, '%s,%s,%s,%d,%d,%d,%.3f,%.3f,%s,%.3f,%d,%.3f,%.3f,%.3f,%d,%d,%d,%d\n', fecha, equipo, lab, size(corridas,1), ...
+        anuladas, nnz(visitadas), mejorT, mejorP, motivo, t, dMin, tD, primerT, rapidaT, comp);
 fclose(fid);
 
 fid = fopen(fullfile(dirRes, sprintf('%s_%s_%s.txt', equipo, lab, fecha)), 'w');
@@ -241,6 +245,12 @@ for i = 1:size(corridas,1)
 end
 fprintf(fid, '\nMejor tiempo: %.3f s   Puntaje final: %.3f\n', mejorT, mejorP);
 fprintf(fid, 'Celdas distintas visitadas: %d de %d\n', nnz(visitadas), N*N);
+fprintf(fid, '\n%s\n', txtComp);
+fprintf(fid, '  Llegada (llega a la meta):                       %2d%%\n', comp(1));
+fprintf(fid, '  Regreso (regresa y llega otra vez):              %2d%%\n', comp(2));
+fprintf(fid, '  Corrida rapida (<= 80%% de la primera):          %2d%%', comp(3));
+if ~isnan(primerT), fprintf(fid, '  (%.3f s <= %.3f s)', rapidaT, 0.8*primerT); end
+fprintf(fid, '\n  (Cuenta para la calificacion solo en el laberinto de clasificacion.)\n');
 if isempty(corridas)
     fprintf(fid, 'Sin corridas completas: distancia minima a la meta %d celdas (t = %.3f s)\n', dMin, tD);
     fprintf(fid, 'Puntaje = %d + %d*%d + %.3f/%d = %.3f\n', TIEMPO_LIMITE, PESO_DISTANCIA, dMin, ...
@@ -248,7 +258,7 @@ if isempty(corridas)
 end
 fclose(fid);
 
-wb_supervisor_set_label(1, sprintf('FIN: %s', motivo), 0.01, 0.38, 0.08, [1 0.85 0], 0, 'Arial');
+wb_supervisor_set_label(1, sprintf('FIN: %s', motivo), 0.01, 0.36, 0.07, [1 0.85 0], 0, 'Arial');
 
 % Detiene la simulacion (no cierra Webots). Para torneos automaticos sin
 % interfaz, definir la variable de entorno MICROMOUSE_SALIR=1 y Webots se cierra.
@@ -260,6 +270,19 @@ end
 wb_robot_step(TIME_STEP);
 
 % =====================================================================
+function [c, txt] = calificacion(corridas)
+% Renglones Llegada, Regreso y Corrida rapida del Reglamento (10.1), en %:
+%   llegada: al menos una corrida completa; regreso: al menos dos;
+%   corrida rapida: la mas rapida dura a lo mas el 80% de la primera.
+    n = size(corridas, 1);
+    c = [10*(n >= 1), 10*(n >= 2), 0, 0];
+    if n >= 2 && min(corridas(:,3)) <= 0.8*corridas(1,3), c(3) = 10; end
+    c(4) = sum(c(1:3));
+    sn = {'no', 'si'};
+    txt = sprintf('Llegada %s | Regreso %s | Corrida rapida %s  =  %d%%', ...
+                  sn{1 + (c(1) > 0)}, sn{1 + (c(2) > 0)}, sn{1 + (c(3) > 0)}, c(4));
+end
+
 function D = distancias_meta(N)
 % Distancia en celdas (por los pasillos) de cada celda a la meta 2x2.
 % Las paredes se leen del grupo DEF LABERINTO del mundo: cada MazeWall se

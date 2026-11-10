@@ -175,7 +175,7 @@ computadora.
 
 > **Cada entrega solo se evalúa si se entregaron todas las anteriores.** Si un
 > equipo no entrega un hito, ninguna de las entregas siguientes se evalúa: por
-> ejemplo, sin el H2 no se evalúan el H3, el H4, la competencia ni el reporte.
+> ejemplo, sin el H2 no se evalúan el H3, el H4, llegada, regreso, corrida rápida ni el reporte.
 >
 > **Todo se entrega en las semanas 14 y 15.** Los hitos H1–H4 se entregan junto
 > con el controlador final, el **martes 17 de noviembre**.
